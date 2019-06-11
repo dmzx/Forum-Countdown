@@ -1,5 +1,7 @@
 # Forum Countdown Extension
 
+[![Build Status](https://travis-ci.org/dmzx/Forum-Countdown.svg?branch=master)](https://travis-ci.org/dmzx/Forum-Countdown)
+
 ## Install
 
 1. Download the latest release.
