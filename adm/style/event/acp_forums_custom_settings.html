@@ -1,0 +1,55 @@
+{% INCLUDECSS '@dmzx_forumcountdown/assets/css/switchery.css' %}
+{% INCLUDEJS '@dmzx_forumcountdown/assets/js/switchery.js' %}
+
+<fieldset>
+	<legend>{{ lang('ACP_FORUM_COUNTDOWN_CONFIG') }}</legend>
+
+	<dl>
+		<span style="float: right;"><img src="https://img.shields.io/badge/{{ lang('Version') }}-{{ FORUM_COUNTDOWN_VERSION }}-green.svg?style=plastic" /></span>
+		<dt>
+			<label for="forumcountdown_enable">{{ lang('FORUM_COUNTDOWN_ENABLE') }}{{ lang('COLON') }}</label><br />
+			<span>{{ lang('FORUM_COUNTDOWN_ENABLE_EXPLAIN') }}</span>
+		</dt>
+		<dd>
+			<input type="checkbox" class="js-switch" id="forumcountdown_enable" name="forumcountdown_enable" value="1"{% if FORUM_COUNTDOWN_ENABLE %} checked="checked"{% endif %} />
+		</dd>
+	</dl>
+	<dl>
+		<dt>
+			<label for="forumcountdown_testmode">{{ lang('FORUM_COUNTDOWN_TESTMODE') }}{{ lang('COLON') }}</label><br />
+			<span>{{ lang('FORUM_COUNTDOWN_TESTMODE_EXPLAIN') }}</span>
+		</dt>
+		<dd>
+			<input type="checkbox" class="js-switch" id="forumcountdown_testmode" name="forumcountdown_testmode" value="1"{% if FORUM_COUNTDOWN_TESTMODE %} checked="checked"{% endif %} />
+		</dd>
+	</dl>
+	<dl>
+		<dt>
+			<label for="forumcountdown_date">{{ lang('FORUM_COUNTDOWN_DATE') }}{{ lang('COLON') }}</label><br />
+			<span>{{ lang('FORUM_COUNTDOWN_DATE_EXPLAIN') }}</span>
+		</dt>
+		<dd>
+			<input name="forumcountdown_date" type="text" id="forumcountdown_date" value="{{ FORUM_COUNTDOWN_DATE }}" length="100" maxlength="255" />
+		</dd>
+	</dl>
+	<dl>
+		<dt>
+			<label for="forumcountdown_text">{{ lang('FORUM_COUNTDOWN_TEXT') }}{{ lang('COLON') }}</label><br />
+			<span>{{ lang('FORUM_COUNTDOWN_TEXT_EXPLAIN') }}</span>
+		</dt>
+		<dd>
+			<input name="forumcountdown_text" type="text" id="forumcountdown_text" value="{{ FORUM_COUNTDOWN_TEXT }}" length="100" maxlength="255" />
+		</dd>
+	</dl>
+	<dl>
+		<dt>
+			<label for="forumcountdown_complete">{{ lang('FORUM_COUNTDOWN_COMPLETE') }}{{ lang('COLON') }}</label><br />
+			<span>{{ lang('FORUM_COUNTDOWN_COMPLETE_EXPLAIN') }}</span>
+		</dt>
+		<dd>
+			<input name="forumcountdown_complete" type="text" id="forumcountdown_complete" value="{{ FORUM_COUNTDOWN_COMPLETE }}" length="100" maxlength="255" />
+		</dd>
+	</dl>
+</fieldset>
+
+{% INCLUDEJS '@dmzx_forumcountdown/assets/js/forumcountdown.js' %}

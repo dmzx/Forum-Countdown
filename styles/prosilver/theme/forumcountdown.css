@@ -1,0 +1,27 @@
+.timeforumcount{
+	min-height:26px;
+	color:#c21017;
+	font-size:18px;
+	text-align:center;
+	margin-top:4px;
+	padding-top:6px;
+}
+
+span.forumtime-bigw, span.forumtime-big, span.forumtime-big2, span.forumtime-big3, span.forumtime-big4 {
+	color:#25212F;
+}
+
+span.cd-forumtime{
+	color:#105289;
+}
+
+.inner.disabled {
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  margin: 10px 0;
+  text-align: center;
+  padding: 10px;
+}

@@ -1,0 +1,10 @@
+services:
+    dmzx.forumcountdown.listener:
+        class: dmzx\forumcountdown\event\listener
+        arguments:
+            - '@user'
+            - '@template'
+            - '@config'
+            - '@request'
+        tags:
+            - { name: event.listener }

@@ -1,0 +1,9 @@
+{% if not S_IS_BOT and S_USER_LOGGED_IN and FORUM_COUNTDOWN_ENABLE %}
+{% if (FORUM_COUNTDOWN_TESTMODE and U_ACP) or not FORUM_COUNTDOWN_TESTMODE %}
+<div class="navbar timeforumcount">
+	<div class="inner">
+		<span id="forumtime"></span>
+	</div>
+</div>
+{% endif %}
+{% endif %}

@@ -1,0 +1,41 @@
+{
+	"name": "dmzx/forumcountdown",
+	"type": "phpbb-extension",
+	"description": "Forum Countdown extension display a countdown in your forums, just below the navbar. It can be configured in ACP.",
+	"homepage": "https://www.dmzx-web.net",
+	"version": "1.0.0",
+	"time": "2019-06-07",
+	"keywords": [
+		"phpbb",
+		"extension",
+		"forumcountdown"
+	],
+	"license": "GPL-2.0",
+	"authors": [
+		{
+			"name": "dmzx",
+			"homepage": "https://www.dmzx-web.net",
+			"email": "info@dmzx-web.net",
+			"role": "Extension Developer"
+		}
+	],
+	"require": {
+		"php": ">=5.3.3",
+		"composer/installers": "~1.0"
+	},
+	"require-dev": {
+		"phpbb/epv": "dev-master"
+	},
+	"extra": {
+		"display-name": "Forum Countdown",
+		"soft-require": {
+			"phpbb/phpbb": ">=3.2.0,<3.3.0"
+		},
+		"version-check": {
+			"host": "www.dmzx-web.net",
+			"directory": "/versions",
+			"filename": "forumcountdown_version.json",
+			"ssl": true
+		}
+	}
+}

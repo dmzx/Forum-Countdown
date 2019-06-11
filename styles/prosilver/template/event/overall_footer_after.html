@@ -1,0 +1,61 @@
+{% if FORUM_COUNTDOWN_ENABLE %}
+{% INCLUDEJS 'jquery.jcountdown.min.js' %}
+<script>
+	$(function() {
+		var $timerBoxc = $('#forumtime');
+		$timerBoxc.html('{{ FORUM_COUNTDOWN_TEXT }} <br /> <span class="forumtime-bigw"></span> <span class="forumtime-big"></span> <span class="forumtime-small"></span> <span class="forumtime-big2"></span> <span class="forumtime-small2"></span> <span class="forumtime-big3"></span> <span class="forumtime-small3"></span> <span class="forumtime-big4"></span> <span class="forumtime-small4"></span> ');
+		var $timerBigcw = $timerBoxc.find('.forumtime-bigw');
+		var $timerBigc = $timerBoxc.find('.forumtime-big');
+		var $timerBigc2 = $timerBoxc.find('.forumtime-big2');
+		var $timerBigc3 = $timerBoxc.find('.forumtime-big3');
+		var $timerBigc4 = $timerBoxc.find('.forumtime-big4');
+		var $timerSmallc = $timerBoxc.find('.forumtime-small');
+		var $timerSmallc2 = $timerBoxc.find('.forumtime-small2');
+		var $timerSmallc3 = $timerBoxc.find('.forumtime-small3');
+		var $timerSmallc4 = $timerBoxc.find('.forumtime-small4');
+		var numberw = '';
+		var number = '';
+		var number2 = '';
+		var number3 = '';
+		var number4 = '';
+		var unit = '';
+		var unit2 = '';
+		var unit3 = '';
+		var unit4 = '';
+
+		var utcc = new Date('{{ FORUM_COUNTDOWN_DATE }}').getTime();
+
+		$timerBoxc.countdown(utcc).on('update.countdown', function(event) {
+			if (event.offset.totalDays > 0) {
+				number = event.strftime('%-D day%!d ');
+				number2 = event.strftime('%-H hour%!H ');
+				number3 = event.strftime('%-M minute%!M ');
+				number4 = event.strftime('%-S second%!S ');
+			} else if (event.offset.hours > 0) {
+				number2 = event.strftime('%-H hour%!H ');
+				number3 = event.strftime('%-M minute%!M ');
+				number4 = event.strftime('%-S second%!S ');
+			} else if (event.offset.minutes > 0) {
+				number3 = event.strftime('%-M minute%!M ');
+				number4 = event.strftime('%-S second%!S ');
+			} else if (event.offset.seconds > 0) {
+				number4 = event.strftime('%-S second%!S ');
+			}
+			$timerBigcw.html(numberw);
+			$timerBigc.html(number);
+			$timerBigc2.html(number2);
+			$timerBigc3.html(number3);
+			$timerBigc4.html(number4);
+			$timerSmallc.html(unit);
+			$timerSmallc2.html(unit2);
+			$timerSmallc3.html(unit3);
+			$timerSmallc4.html(unit4);
+		}).on('finish.countdown', function() {
+			$(this).html('{{ FORUM_COUNTDOWN_COMPLETE }}')
+			.parent().addClass('disabled');
+		});
+
+		$timerBoxc.show();
+	});
+</script>
+{% endif %}
